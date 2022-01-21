@@ -713,20 +713,18 @@ public class LocalNotification extends CordovaPlugin {
             return;
         }
 
-        final CordovaWebView view = webView.get();
+        // final CordovaWebView view = webView.get();
 
-        ((Activity) (view.getContext())).runOnUiThread(new Runnable() {
-            public void run() {
-                view.loadUrl("javascript:" + js);
-                if (view.getEngine().getView() != null) {
-                    View engineView = view.getEngine().getView();
+        // ((Activity) (view.getContext())).runOnUiThread(new Runnable() {
+        //     public void run() {
+        //         view.loadUrl("javascript:" + js);
+        //         View engineView = view.getEngine().getView();
 
-                    if (!isInForeground()) {
-                        engineView.dispatchWindowVisibilityChanged(View.VISIBLE);
-                    }
-                }
-            }
-        });
+        //         if (!isInForeground()) {
+        //             engineView.dispatchWindowVisibilityChanged(View.VISIBLE);
+        //         }
+        //     }
+        // });
     }
 
     /**
