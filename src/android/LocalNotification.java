@@ -718,7 +718,7 @@ public class LocalNotification extends CordovaPlugin {
         ((Activity) (view.getContext())).runOnUiThread(new Runnable() {
             public void run() {
                 view.loadUrl("javascript:" + js);
-                if (view.getEngine()) {
+                if (view.getEngine().getView() != null) {
                     View engineView = view.getEngine().getView();
 
                     if (!isInForeground()) {
